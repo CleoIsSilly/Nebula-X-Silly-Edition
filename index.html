@@ -11,7 +11,7 @@
             margin: 0;
             height: 100vh;
             display: flex;
-            background: radial-gradient(circle at bottom, #7c2ae8, #000);
+            background: radial-gradient(circle at bottom, #d6006c, #000);
             color: white;
             font-family: Arial, sans-serif;
             overflow: hidden;
@@ -63,7 +63,7 @@
             transition: width 0.3s ease-in-out;
             padding-top: 15px;
             z-index: 10;
-            border-bottom: 2px solid #d580ff;
+            border-bottom: 2px solid #ff1c8e;
         }
 
         .sidebar:hover {
@@ -83,7 +83,7 @@
 
         .sidebar .divider {
             width: 80%;
-            border-bottom: 1px solid #d580ff;
+            border-bottom: 1px solid #ff1c8e;
             margin-bottom: 15px;
         }
 
@@ -91,7 +91,7 @@
             text-align: center;
             padding: 10px;
             cursor: pointer;
-            color: #d580ff;
+            color: #ff1c8e;
             font-size: 16px;
             transition: all 0.3s ease;
             margin-bottom: 15px;
@@ -128,8 +128,8 @@
         }
 
         .content h1 span {
-            color: #d580ff;
-            text-shadow: 0 0 20px #d580ff, 0 0 40px #d580ff, 0 0 60px #d580ff;
+            color: #ff1c8e;
+            text-shadow: 0 0 20px #ff1c8e, 0 0 40px #ff1c8e, 0 0 60px #ff1c8e;
         }
 
         .content p {
@@ -146,17 +146,17 @@
             background: #b34cd9;
             color: white;
             font-weight: bold;
-            text-shadow: 0 0 20px #d580ff, 0 0 40px #d580ff, 0 0 60px #d580ff;
+            text-shadow: 0 0 20px #ff1c8e, 0 0 40px #ff1c8e, 0 0 60px #ff1c8e;
             position: relative;
-            border: 2px solid #d580ff;
-            box-shadow: 0 0 10px #d580ff;
+            border: 2px solid #ff1c8e;
+            box-shadow: 0 0 10px #ff1c8e;
             transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
             overflow: hidden;
         }
 
         .content a:hover {
             transform: scale(1.2);
-            box-shadow: 0 0 20px #d580ff;
+            box-shadow: 0 0 20px #ff1c8e;
             opacity: 0.9;
         }
 
@@ -188,248 +188,25 @@
                 font-size: 14px;
             }
         }
-        
-/* Button to trigger pop-up */
-.announcement-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #d580ff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 30px;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 10px #d580ff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.announcement-btn:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 20px #d580ff;
-}
-
-/* Popup styling */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.5s ease-out;
-z-index: 9999;  /* Added higher z-index */
-}
-
-.popup-content {
-  display: flex;
-  width: 70%;
-  height: 80%;
-  background-color: #2d2d2d;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.popup-navbar {
-  width: 20%;
-  background-color: #1a1a1a;
-}
-
-.popup-navbar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.popup-navbar li {
-  padding: 15px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.popup-navbar li:hover {
-  background-color: #444;
-}
-
-.popup-navbar li.active {
-  background-color: #333;
-}
-
-.popup-body {
-  width: 80%;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.popup-section {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.popup-section.active {
-  display: block;
-  opacity: 1;
-}
-
-h2 {
-  color: #fff;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-        /* Close button styling */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.close-btn:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
-
-
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const starsContainer = document.querySelector('.stars');
-            const totalStars = 400;  // Doubled the number of stars
-
-            for (let i = 0; i < totalStars; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.animationDelay = `${Math.random() * 5}s`;
-                star.style.animationDuration = `${2 + Math.random() * 3}s`;
-                starsContainer.appendChild(star);
-            }
-
-            const navItems = document.querySelectorAll('.sidebar .nav-item');
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    navItems.forEach(nav => nav.classList.remove('selected'));
-                    item.classList.add('selected');
-                });
-            });
-
-            const button = document.querySelector('.content a');
-            button.addEventListener('mouseenter', () => {
-                const buttonRect = button.getBoundingClientRect();
-                const container = document.body;
-
-                for (let i = 0; i < 20; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-
-                    const angle = Math.random() * 2 * Math.PI;
-                    const distance = Math.random() * 120 + 60;
-                    const x = Math.cos(angle) * distance;
-                    const y = Math.sin(angle) * distance * 0.5;
-
-                    particle.style.setProperty('--x', `${x}px`);
-                    particle.style.setProperty('--y', `${y}px`);
-                    particle.style.left = `${buttonRect.left + buttonRect.width / 2}px`;
-                    particle.style.top = `${buttonRect.top + buttonRect.height / 2}px`;
-
-                    container.appendChild(particle);
-
-                    particle.addEventListener('animationend', () => {
-                        particle.remove();
-                    });
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="background">
         <div class="stars"></div>
-        <!-- Button to trigger announcement pop-up -->
-<button id="announcement-btn" class="announcement-btn">📢</button>
-
-     <div id="announcementPopup" class="popup">
-  <div class="popup-content">
-       <button id="close-btn" class="close-btn">X</button>
-    <!-- Navbar -->
-    <div class="popup-navbar">
-      <ul>
-        <li id="announcementsTab" class="active" onclick="switchTab('announcements')">Announcements</li>
-        <li id="updatesTab" onclick="switchTab('updates')">Updates</li>
-        <li id="linksTab" onclick="switchTab('links')">Links</li>
-      </ul>
-    </div>
-    
-    <!-- Popup Sections -->
-    <div class="popup-body">
-      <div id="announcements" class="popup-section active">
-        <h2>Announcements</h2>
-         <p><strong>Date: March 28, 2025</strong></p>
-  <p>nebula news</p>
-  <p>hello everyone :3 ! I have a few announcements today! First off, I would like to say thank you to you all for using and supporting Nebula. It is really amazing to me. I could never have imagined that this silly project I started would grow this much. Second I will be taking a week break off of development and everything because I have spring break. and Third we just released our new data:URL launcher! its fully unblockable and in the github read me. so go check it out. If you're enjoying nebula, PLEASE star the repo and maybe even follow me on github it'd make me so happy. thank you all! ill see you in a week :D </p>
-      </div>
-      <div id="updates" class="popup-section">
-        <h2>Updates</h2>
-          <p><strong>version: 2.0.7</strong></p>
-        <p> release note: added data URL launcher, added more games (from game requests), updated proxy (tried to make it faster), and last but not least I added this announcement pop up :D </p>
-      </div>
-      <div id="links" class="popup-section">
-        <h2>Links</h2>
-          <ul>
-        <li><a href="https://nx.above.gay/" target="_blank">Main Website</a></li>
-    <li><a href="https://nebulaprxy-x.netlify.app/" target="_blank">Netlify Deployment</a></li>
-    <li><a href="https://nebula-x-development.github.io/Nebula-X-site/index.html" target="_blank">GitHub Pages Site</a></li>
-</ul>
-
-<h2>Deploy It Yourself</h2>
-<p>You can deploy Nebula X on any static hosting provider (except GitHub Codespaces) using the following repository:</p>
-<p><a href="https://github.com/Nebula-X-Development/Nebula-X-site/" target="_blank">GitHub Repository</a></p>
-          <p>more links coming soon...</p>
-      </div>
-    </div>
-  </div>
-</div>
-
         
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Logo at the top of the sidebar with link -->
             <a href="index.html" class="logo-link">
                 <img class="logo" src="https://raw.githubusercontent.com/Nebula-X-Development/Nebula-X-BETA/refs/heads/main/NEBULA_LOGO.png" alt="Nebula-X Logo">
             </a>
-            
-            <!-- Divider line -->
             <div class="divider"></div>
 
             <!-- Navigation items -->
-            <div class="nav-item selected"><a href="index.html"><i class="fa fa-home" style="color:white;"></i></a></div>
-            <div class="nav-item"><a href="search.html"><i class="fa fa-search" style="color:#d580ff;"></i></a></div>
-<div class="nav-item">
-  <a href="tools.html"><i class="fa-solid fa-screwdriver-wrench" style="color:#d580ff;"></i></a>
-</div>
-            <div class="nav-item"><a href="gamepage.html"><i class="fa fa-gamepad" style="color:#d580ff;"></i></a></div>
-            
-            <!-- Divider line before About and Settings -->
-            <div class="divider"></div>
-
-            <!-- New "About" and "Settings" buttons at the bottom -->
-            <div class="nav-item"><a href="Aboutpage.html"><i class="fa fa-circle-info "style="color:#d580ff;"></i></a></div>
-            <div class="nav-item"><a href="settings.html"><i class="fa fa-cogs" style="color:#d580ff;"></i></a></div>
+            <div class="nav-item selected"><a href="https://cleoissilly.github.io/Nebula-X-site/"><i class="fa fa-home" style="color:white;"></i></a></div>
+            <div class="nav-item"><a href="https://cleoissilly.github.io/Nebula-X-site/search.html"><i class="fa fa-search" style="color:white;"></i></a></div>
+            <div class="nav-item"><a href="https://cleoissilly.github.io/Nebula-X-site/gamepage.html"><i class="fa fa-gamepad" style="color:white;"></i></a></div>
+            <div class="nav-item"><a href="aboutpage.html"><i class="fa fa-info-circle" style="color:white;"></i></a></div>
+            <div class="nav-item"><a href="https://cleoissilly.github.io/Nebula-X-site/settings.html"><i class="fa fa-cogs" style="color:white;"></i></a></div>
         </div>
         
         <!-- Main Content -->
@@ -442,11 +219,9 @@ h2 {
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const performanceSwitch = document.getElementById('performanceMode');
         const starsContainer = document.querySelector('.stars');
         const totalStars = 400;
 
-        // Generate stars
         for (let i = 0; i < totalStars; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
@@ -456,110 +231,6 @@ h2 {
             star.style.animationDuration = `${2 + Math.random() * 3}s`;
             starsContainer.appendChild(star);
         }
-
-        // Check and set the initial state from localStorage
-        if (localStorage.getItem('performanceMode') === 'true') {
-            starsContainer.style.display = 'none'; // Hide stars
-            performanceSwitch.checked = true;
-        }
-
-        // Toggle performance mode
-        performanceSwitch.addEventListener('change', () => {
-            if (performanceSwitch.checked) {
-                starsContainer.style.display = 'none'; // Hide stars
-                localStorage.setItem('performanceMode', 'true');
-            } else {
-                starsContainer.style.display = 'block'; // Show stars
-                localStorage.setItem('performanceMode', 'false');
-            }
-        });
     });
-      document.addEventListener('DOMContentLoaded', () => {
-      const savedTabCloak = localStorage.getItem('tabCloak');
-      if (savedTabCloak) {
-          const { title, icon } = JSON.parse(savedTabCloak);
-          updateTab(title, icon);
-      }
-  });
-
-  function updateTab(title, icon) {
-      document.title = title;
-      updateFavicon(icon);
-  }
-
-  function updateFavicon(iconURL) {
-      setTimeout(() => { // Delay to ensure DOM is ready
-          // Remove existing favicons
-          document.querySelectorAll("link[rel='icon'], link[rel='shortcut icon']").forEach(e => e.remove());
-
-          // Create and append new favicon
-          const newFavicon = document.createElement("link");
-          newFavicon.rel = "icon";
-          newFavicon.type = "image/x-icon";
-          newFavicon.href = iconURL + `?v=${new Date().getTime()}`; // Cache-busting
-          document.head.appendChild(newFavicon);
-
-          console.log("Favicon updated to:", newFavicon.href);
-      }, 100); // Small delay to avoid execution conflicts
-  }
-    document.addEventListener('DOMContentLoaded', () => {
-    const announcementBtn = document.getElementById('announcement-btn');
-    const popup = document.getElementById('announcement-popup');
-    const closeBtn = document.getElementById('close-btn');
-
-    // Show pop-up when button is clicked
-    announcementBtn.addEventListener('click', () => {
-        popup.style.display = 'flex';
-    });
-
-    // Close pop-up when close button is clicked
-    closeBtn.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-
-    // Close pop-up if background is clicked
-    popup.addEventListener('click', (event) => {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
-    });
-});
-function switchTab(tabName) {
-  // Hide all sections
-  const sections = document.querySelectorAll('.popup-section');
-  sections.forEach(section => section.classList.remove('active'));
-  
-  // Remove active class from all navbar items
-  const navbarItems = document.querySelectorAll('.popup-navbar li');
-  navbarItems.forEach(item => item.classList.remove('active'));
-  
-  // Show the selected section and add active class to the navbar item
-  document.getElementById(tabName).classList.add('active');
-  document.getElementById(tabName + 'Tab').classList.add('active');
-}
-document.addEventListener('DOMContentLoaded', () => {
-    const announcementBtn = document.getElementById('announcement-btn');
-    const popup = document.getElementById('announcementPopup');  // Corrected ID here
-    const closeBtn = document.getElementById('close-btn');
-
-    // Show pop-up when button is clicked
-    announcementBtn.addEventListener('click', () => {
-        popup.style.display = 'flex';
-    });
-
-    // Close pop-up when close button is clicked
-    closeBtn.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
-
-    // Close pop-up if background is clicked
-    popup.addEventListener('click', (event) => {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
-    });
-});
-
 </script>
-<script src="panicKey.js"></script>
 </html>
