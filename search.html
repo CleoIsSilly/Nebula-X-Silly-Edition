@@ -19,7 +19,7 @@
         margin: 0;
         height: 100vh;
         display: flex;
-        background: radial-gradient(circle at bottom, #7c2ae8, #000);
+        background: radial-gradient(circle at bottom, #f8a6d2, #000);
         color: white;
         font-family: Arial, sans-serif;
         overflow: hidden;
@@ -65,7 +65,7 @@
         transition: width 0.3s ease-in-out;
         padding-top: 15px;
         z-index: 10;
-        border-bottom: 2px solid #d580ff;
+        border-bottom: 2px solid #ff88cc;
       }
       .sidebar:hover {
         width: 70px;
@@ -81,20 +81,20 @@
       }
       .sidebar .divider {
         width: 80%;
-        border-bottom: 1px solid #d580ff;
+        border-bottom: 1px solid #ff88cc;
         margin-bottom: 15px;
       }
       .sidebar .nav-item {
         text-align: center;
         padding: 10px;
         cursor: pointer;
-        color: #d580ff;
+        color: #ff88cc;
         font-size: 16px;
         transition: all 0.3s ease;
         margin-bottom: 15px;
       }
       .sidebar .nav-item.selected {
-        background-color: #b34cd9;
+        background-color: #ff6ccf;
         border-radius: 10px;
         color: white;
       }
@@ -127,7 +127,7 @@
         width: 400px;
         padding: 12px 20px;
         border-radius: 30px;
-        border: 2px solid #d580ff;
+        border: 2px solid #ff88cc;
         outline: none;
         background-color: #111;
         color: white;
@@ -135,14 +135,14 @@
         transition: all 0.3s ease-in-out;
       }
       .search-box input:focus {
-        box-shadow: 0 0 15px #d580ff;
+        box-shadow: 0 0 15px #ff88cc;
       }
       .search-box button {
         position: absolute;
         right: 10px;
         background: none;
         border: none;
-        color: #d580ff;
+        color: #ff88cc;
         font-size: 1.2rem;
         cursor: pointer;
         transition: color 0.3s ease-in-out;
@@ -164,7 +164,7 @@
         <div class="divider"></div>
         <div class="nav-item">
           <a href="index.html"
-            ><i class="fa fa-home" style="color:#d580ff"></i
+            ><i class="fa fa-home" style="color:#ff88cc"></i
           ></a>
         </div>
         <div class="nav-item selected">
@@ -176,24 +176,24 @@
           <a href="tools.html"
             ><i
               class="fa-solid fa-screwdriver-wrench"
-              style="color:#d580ff;"
+              style="color:#ff88cc;"
             ></i
           ></a>
         </div>
         <div class="nav-item">
           <a href="gamepage.html"
-            ><i class="fa fa-gamepad" style="color:#d580ff;"></i
+            ><i class="fa fa-gamepad" style="color:#ff88cc;"></i
           ></a>
         </div>
         <div class="divider"></div>
         <div class="nav-item">
           <a href="Aboutpage.html"
-            ><i class="fa fa-circle-info" style="color:#d580ff;"></i
+            ><i class="fa fa-circle-info" style="color:#ff88cc;"></i
           ></a>
         </div>
         <div class="nav-item">
           <a href="settings.html"
-            ><i class="fa fa-cogs" style="color:#d580ff;"></i
+            ><i class="fa fa-cogs" style="color:#ff88cc;"></i
           ></a>
         </div>
       </div>
@@ -215,7 +215,7 @@
 
     <!-- Ensure search.js is loaded before the inline script that uses its function -->
     <script>
-          /**
+      /**
        *
        * @param {string} input
        * @param {string} template Template for a search query.
@@ -303,7 +303,6 @@ function updateFavicon(iconURL) {
         console.log("Favicon updated to:", newFavicon.href);
     }, 100); // Small delay to ensure DOM is ready
 }
-
     </script>
     <script src="panicKey.js"></script>
   </body>
